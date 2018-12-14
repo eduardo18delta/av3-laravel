@@ -42,7 +42,7 @@
 		<td>{{$cliente['usuario']}}</td>
 		<td>************</td>
 		<td><a class="btn btn-info" href="/clientes/{{$cliente['id']}}/editar">Editar dados pessoais</a></td>
-		<td><a class="btn btn-info" href="/clientes/{{$cliente['id'] }}/deletar">Deletar</button></td>
+		<td><a onclick="return confirm('Deseja realmente apagar?');" class="btn btn-info" href="/clientes/{{$cliente['id'] }}/deletar">Deletar</button></td>
 	</tr>
 @endforeach
 	</tbody>

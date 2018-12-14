@@ -27,5 +27,46 @@ class ClientesController extends Controller
         $clientes->delete();
         return redirect('/');
     }
- 
+
+   	public function form_cadastro()
+    {        
+        return view('cadastrar');
+    }
+
+
+    public function cadastrar(Request $request)
+    {
+        $validador = \Validator::make(
+            $request->all(), [
+            'nome' => 'required|min:10',
+            'cpf' => 'required',
+            'dtnascimento' => 'required|date',
+            'estadocivil' => 'required|string',
+            'telefone' => 'required',
+            'endereco' => 'required',
+            'usuario' => 'required',
+            'senha' => 'required',
+        ]);
+
+        if ($validador->passes()) {
+        	$clientes = new Clientes();
+    		$clientes->nome = $request->get('nome');
+    		$clientes->cpf = $request->get('cpf');
+    		$clientes->dtnascimento = $request->get('dtnascimento');
+    		$clientes->estadocivil = $request->get('estadocivil');
+    		$clientes->telefone = $request->get('telefone');
+    		$clientes->endereco = $request->get('endereco');
+    		$clientes->usuario = $request->get('usuario');
+    		$clientes->senha = $request->get('senha');
+    		$clientes->save();            
+
+		  return redirect('/');
+        }else {
+            return redirect()
+                ->back()
+                ->withInput()
+                ->withErrors($validador);
+        }
+    }
 }
+
