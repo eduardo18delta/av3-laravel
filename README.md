@@ -4,5 +4,5 @@
 
 ## Alunos:
 
-* Eduardo Henrique 
-* Brenno Henrique 
+> Eduardo Henrique 
+> Brenno Henrique 
