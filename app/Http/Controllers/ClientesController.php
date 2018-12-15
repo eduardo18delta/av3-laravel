@@ -85,5 +85,20 @@ class ClientesController extends Controller
         return redirect('/');
     }
 
+    public function validar (Request $request){
+      $validador= \Validador::make(
+        $request->all(),[
+          'nome'=>'required|min:10',
+          'cpf'=>'required',
+          'dtnascimento'=>'required|date',
+          'estadocivil'=>'required|string',
+          'telefone'=>'required',
+          'endereco'=>'required',
+          'usuario'=>'required',
+          'senha'=>'required',
+        ]
+      );
+    }
+
 }
 /*ok*/
