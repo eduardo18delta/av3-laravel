@@ -15,7 +15,7 @@
 
 <div class="col-8">
 
-<form method="post" action="/clientes/editar/clientes">
+<form method="get" action="/clientes/{{$clientes['id']}}/editarcliente">
 {!! csrf_field() !!}	
 
 <div class="form-group">
@@ -45,7 +45,7 @@
 
 <div class="form-group">
 <label>Endereço:</label>
-<input value="{{$clientes['endereco']}}" class="form-control" type="text" name="telefone">
+<input value="{{$clientes['endereco']}}" class="form-control" type="text" name="endereco">
 </div>
 
 <div class="form-group">
@@ -58,8 +58,8 @@
 <input value="{{$clientes['senha']}}" class="form-control" type="text" name="senha">
 </div>
 
-<div class="form-group">
-	<button class="btn btn-success btn-block" type="submit">Editar cliente</button>
+<div class="form-group">	
+	<input type="submit" class="btn btn-success btn-block" onclick="return confirm('Deseja realmente editar?');" name="enviar" value="Editar">
 </div>
 
 </form>

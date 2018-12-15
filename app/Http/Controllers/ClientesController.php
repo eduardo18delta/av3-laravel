@@ -68,5 +68,22 @@ class ClientesController extends Controller
                 ->withErrors($validador);
         }
     }
+
+    public function atualizar(Request $request, $id)
+    {
+        $clientes = Clientes::find($id);
+    	$clientes->nome = $request->get('nome');
+    	$clientes->cpf = $request->get('cpf');
+    	$clientes->dtnascimento = $request->get('dtnascimento');
+    	$clientes->estadocivil = $request->get('estadocivil');
+    	$clientes->telefone = $request->get('telefone');
+    	$clientes->endereco = $request->get('endereco');
+    	$clientes->usuario = $request->get('usuario');
+    	$clientes->senha = $request->get('senha');
+        $clientes->save();
+
+        return redirect('/');
+    }
+
 }
 

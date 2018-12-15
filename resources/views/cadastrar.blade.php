@@ -8,6 +8,7 @@
 		<div class="alert alert-success">
 			Criação de usuário.
 		</div>
+		<a class="btn btn-success btn-block" href="/">Voltar</a>
 	</div>
 </div>
 
