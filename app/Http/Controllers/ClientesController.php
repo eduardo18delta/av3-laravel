@@ -8,8 +8,8 @@ use App\Clientes;
 
 class ClientesController extends Controller
 {
-  
-    public function listarclientes() 
+
+    public function listarclientes()
     {
 		$clientes = Clientes::all();
 		return view('listar', ['clientes' => $clientes]);
@@ -29,7 +29,7 @@ class ClientesController extends Controller
     }
 
    	public function form_cadastro()
-    {        
+    {
         return view('cadastrar');
     }
 
@@ -58,7 +58,7 @@ class ClientesController extends Controller
     		$clientes->endereco = $request->get('endereco');
     		$clientes->usuario = $request->get('usuario');
     		$clientes->senha = $request->get('senha');
-    		$clientes->save();            
+    		$clientes->save();
 
 		  return redirect('/');
         }else {
@@ -86,4 +86,4 @@ class ClientesController extends Controller
     }
 
 }
-
+/*ok*/
