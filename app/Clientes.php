@@ -6,3 +6,4 @@ class Clientes extends Model
     protected $table = 'clientes';
     public $timestamps = false;
 }
+/*ok*/
