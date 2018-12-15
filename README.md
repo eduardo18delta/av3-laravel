@@ -2,7 +2,7 @@
 
 ## Professor
 
-> prof: Paulo de Tarso.
+> Prof: Paulo de Tarso.
 
 ## Alunos:
 
